@@ -42,3 +42,156 @@ body {
   letter-spacing: -4%;
   text-transform: capitalize;
 }
+.text-heroCard {
+  font-family: Poppins;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 81px;
+  letter-spacing: -4%;
+  text-align: center;
+}
+.perspective {
+  perspective: 1000px;
+}
+/* accordion css */
+/* MAIN CONTAINER */
+.accordion {
+  display: flex;
+  /* height: 636px; */
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+/* ITEM */
+.acc-item {
+  display: flex;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+/* LEFT VERTICAL TAB */
+.acc-trigger {
+  width: 60px;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 300;
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.9);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover */
+.acc-trigger:hover {
+  color: #fff;
+}
+
+/* DIFFERENT TAB COLORS (like your screenshot) */
+.acc-item:nth-child(1) .acc-trigger {
+  background: #2f3192;
+}
+.acc-item:nth-child(2) .acc-trigger {
+  background: #3a3d99;
+}
+.acc-item:nth-child(3) .acc-trigger {
+  background: #4649a1;
+}
+.acc-item:nth-child(4) .acc-trigger {
+  background: #5356a9;
+}
+.acc-item:nth-child(5) .acc-trigger {
+  background: #6063b1;
+}
+.acc-item:nth-child(6) .acc-trigger {
+  background: #6d70b9;
+}
+.acc-item:nth-child(7) .acc-trigger {
+  background: #7a7dc1;
+}
+.acc-item:nth-child(8) .acc-trigger {
+  background: #878ac9;
+}
+
+/* CONTENT AREA */
+.acc-content {
+  width: 0;
+  overflow: hidden;
+  background: #f3f4f6;
+  transition: all 0.5s ease;
+  display: flex;
+  /* align-items: center; */
+}
+
+/* INNER CONTENT */
+.acc-inner {
+  padding: 50px;
+  max-width: 1100px;
+}
+
+/* TITLE */
+.acc-inner h3 {
+  /* font-size: 28px; */
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+.acc-inner p {
+  color: black;
+  margin-bottom: 25px;
+  letter-spacing: -4%;
+}
+
+/* LIST */
+.acc-inner ul {
+  margin-bottom: 30px;
+}
+.acc-inner li {
+  font-size: 25px;
+  letter-spacing: -4%;
+  margin-bottom: 8px;
+}
+
+/* BUTTON */
+.acc-inner button {
+  height: 47px;
+  width: 171px;
+  padding: 8px 20px;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: -4%;
+  font-size: 23px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ACTIVE OPEN PANEL */
+.acc-item.active .acc-content {
+  width: 1100px; /* 👈 adjust like your design */
+}
+
+/* FIRST TAB ROUNDED LEFT */
+/* .acc-item:first-child .acc-trigger {
+  border-radius: 30px 0 0 30px;
+} */
+
+/* LAST TAB ROUNDED RIGHT */
+.acc-item:last-child .acc-trigger {
+  /* border-radius: 0 30px 30px 0; */
+}

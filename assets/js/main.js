@@ -28,7 +28,13 @@ async function renderPage(pageName) {
   // 2. Load components AFTER page is rendered
   if (pageName === "homePage") {
     await loadComponent("hero1", "./components/hero1.html");
-    await loadComponent("hero2", "./components/hero2.html");
+    await loadComponent("allCenter", "./components/allCenter.html");
+    await loadComponent("eyeCareCenter", "./components/eyeCareSection.html");
+
+    // ✅ IMPORTANT: call after everything loaded
+    setTimeout(() => {
+      initTabs();
+    }, 0);
   }
 }
 
@@ -40,5 +46,17 @@ async function init() {
   // Default page
   await renderPage("homePage");
 }
+function initTabs() {
+  const items = document.querySelectorAll(".acc-item");
 
+  items.forEach((item) => {
+    item.querySelector(".acc-trigger").onclick = () => {
+      // Close all (single mode like Radix)
+      items.forEach((i) => i.classList.remove("active"));
+
+      // Open clicked
+      item.classList.add("active");
+    };
+  });
+}
 init();
